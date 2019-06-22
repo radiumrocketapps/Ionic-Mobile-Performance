@@ -10,11 +10,11 @@
 </div>
 
 <div className="buttons-container">
-  <button className="button" type="button" onClick={this.handleStart}>
+  <button className="button" type="button" (click)="handleStart()">
     Start
   </button>
-  <button className="button" type="button" onClick={this.handleStop}>
+  <button className="button" type="button" (click)="handleStop()">
     Stop
   </button>
 </div>
-<div className="board">{this.renderBoard()}</div>
+<div className="board"></div>
