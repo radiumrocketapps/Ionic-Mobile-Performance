@@ -1,22 +1,30 @@
-<div className="inputs-container">
-  <label className="label">
-    Rows:
-    <input className="input" type="text" [(ngModel)]="state.rows" [disabled]="state.gameRunning" />
-  </label>
-  <label className="label">
-    Columns:
-    <input className="input" type="text" [(ngModel)]="state.columns" [disabled]="state.gameRunning" />
-  </label>
-</div>
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
 
-<div className="buttons-container">
-  <button className="button" type="button" (click)="handleStart()">
-    Start
-  </button>
-  <button className="button" type="button" (click)="handleStop()">
-    Stop
-  </button>
-</div>
-<div className="board">
-  <!-- Board repeat in here -->
-</div>
+      <ion-col>
+        <ion-item [disabled]="state.gameRunning">
+          <ion-label position="floating">Rows</ion-label>
+          <ion-input type="number" [(ngModel)]="state.rows"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item [disabled]="state.gameRunning">
+          <ion-label position="floating">Columns</ion-label>
+          <ion-input type="number" [(ngModel)]="state.columns"></ion-input>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <div className="board">
+    <!-- Board repeat in here -->
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button color="success" expand="full" *ngIf="!state.gameRunning" (click)="handleStart()">Start</ion-button>
+  <ion-button color="danger" expand="full" *ngIf="state.gameRunning" (click)="handleStop()">Stop</ion-button>
+</ion-footer>
