@@ -17,9 +17,30 @@ export class GamePage implements OnInit {
     gameRunning: false,
     interval: 100,
     board: new Board()
-  }
+  };
 
   ngOnInit() {
+    this.showGame();
+  }
+
+  getCells(cols, rows) {
+    this.dynamicBoard();
+    return Array(cols * rows);
+  }
+
+  showGame = () => {
+    document.getElementById('game').style.display = 'flex';
+  }
+
+  getBoard = () => {
+    return document.getElementById('board');
+  }
+
+  dynamicBoard = () => {
+    const board = this.getBoard();
+    const calculation = this.state.rows * 26;
+    board.style.height = calculation + 'px';
+    board.style.width = calculation + 'px';
   }
 
   handleStart = () => {
@@ -29,14 +50,14 @@ export class GamePage implements OnInit {
       this.intervalRef = setInterval(
         () => this.runGame(),
         this.state.interval
-      )
+      );
     }
   }
 
   handleStop = () => {
     this.state.gameRunning = false;
     if (this.intervalRef) {
-      clearInterval(this.intervalRef)
+      clearInterval(this.intervalRef);
     }
   }
 
@@ -46,7 +67,7 @@ export class GamePage implements OnInit {
 
   storeCell(position) {
     if (!this.state.gameRunning) {
-      this.state.board.storeCell(position)
+      this.state.board.storeCell(position);
     }
   }
 }

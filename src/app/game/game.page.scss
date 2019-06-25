@@ -1,7 +1,19 @@
 .board {
+  background-color: #ccc;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #999;
   display: flex;
+  flex-wrap: wrap;
+  height: 180px;
+  width: 180px;
+}
+
+.game {
+  align-items: center;
+  display: none;
   justify-content: center;
-  margin: 20px;
-  padding: 20px 60px;
-  border: black dotted 2px;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }

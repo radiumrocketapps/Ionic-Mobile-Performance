@@ -18,9 +18,10 @@
 
     </ion-row>
   </ion-grid>
-
-  <div className="board">
-    <!-- Board repeat in here -->
+  <div class="game" id="game">
+    <ul class="board" id="board">
+      <app-cell *ngFor="let item of getCells(state.columns, state.rows)"></app-cell>
+    </ul>
   </div>
 </ion-content>
 
