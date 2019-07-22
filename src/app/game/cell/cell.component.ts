@@ -8,15 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CellComponent implements OnInit {
   @Input() 'board': any;
   @Input() 'position': any;
+  @Input() 'live': boolean = false;
 
   constructor() { }
 
   ngOnInit() {}
 
   storeCell() {
-    // let position = {}
-    console.log(this.position);
-    // this.board.storeCell({x = this.x, y = this.y});
+    this.board.storeCell(this.position);
+    this.live = this.board.isCellAlive(`${this.position.x} , ${this.position.y}`)
   }
-
 }

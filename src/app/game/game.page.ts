@@ -67,7 +67,7 @@ export class GamePage implements OnInit {
 
   storeCell(position) {
     if (!this.state.gameRunning) {
-      console.log(position)
+      this.state.board.storeCell(position);
     }
   }
 
