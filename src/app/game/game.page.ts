@@ -23,11 +23,6 @@ export class GamePage implements OnInit {
     this.showGame();
   }
 
-  getCells(cols, rows) {
-    this.dynamicBoard();
-    return Array(cols * rows);
-  }
-
   showGame = () => {
     document.getElementById('game').style.display = 'flex';
   }
