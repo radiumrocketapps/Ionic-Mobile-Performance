@@ -21,7 +21,7 @@
   <div class="game" id="game">
     <ul class="board" id="board">
       <div *ngFor="let column of returnArrayForNgFor(state.columns); let i = index">
-        <app-cell *ngFor="let row of returnArrayForNgFor(state.rows); let j = index"></app-cell>
+        <app-cell [(board)]="state.board" [x]="i" [y]="j" *ngFor="let row of returnArrayForNgFor(state.rows); let j = index"></app-cell>
       </div>
     </ul>
   </div>
