@@ -6,17 +6,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./cell.component.scss'],
 })
 export class CellComponent implements OnInit {
-  @Input() 'x': any;
-  @Input() 'y': any;
   @Input() 'board': any;
+  @Input() 'position': any;
 
   constructor() { }
 
   ngOnInit() {}
 
   storeCell() {
-    console.log(`${this.x}, ${this.y}`);
-    // this.board.storeCell(this.position);
+    // let position = {}
+    console.log(this.position);
+    // this.board.storeCell({x = this.x, y = this.y});
   }
 
 }
