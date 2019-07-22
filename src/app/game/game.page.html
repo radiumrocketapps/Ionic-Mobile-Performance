@@ -20,7 +20,9 @@
   </ion-grid>
   <div class="game" id="game">
     <ul class="board" id="board">
-      <app-cell *ngFor="let item of getCells(state.columns, state.rows)"></app-cell>
+      <div *ngFor="let column of returnArrayForNgFor(state.columns); let i = index">
+        <app-cell *ngFor="let row of returnArrayForNgFor(state.rows); let j = index"></app-cell>
+      </div>
     </ul>
   </div>
 </ion-content>

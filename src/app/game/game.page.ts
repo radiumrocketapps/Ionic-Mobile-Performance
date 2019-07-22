@@ -70,4 +70,8 @@ export class GamePage implements OnInit {
       this.state.board.storeCell(position);
     }
   }
+
+  returnArrayForNgFor(length){
+    return new Array(length);
+  }
 }
