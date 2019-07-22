@@ -21,7 +21,7 @@
   <div class="game" id="game">
     <ul class="board" id="board">
       <div *ngFor="let column of returnArrayForNgFor(state.columns); let i = index">
-        <app-cell [(board)]="state.board" [position]="{x: i, y: j}" *ngFor="let row of returnArrayForNgFor(state.rows); let j = index"></app-cell>
+        <app-cell (click)="state.board.storeCell({x: i, y: j})" [live]="state.board.isCellAlive({x: i, y: j})" [position]="{x: i, y: j}" *ngFor="let row of returnArrayForNgFor(state.rows); let j = index"></app-cell>
       </div>
     </ul>
   </div>

@@ -13,9 +13,4 @@ export class CellComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
-  storeCell() {
-    this.board.storeCell(this.position);
-    this.live = this.board.isCellAlive(`${this.position.x} , ${this.position.y}`)
-  }
 }
