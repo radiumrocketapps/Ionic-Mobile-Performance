@@ -4,15 +4,15 @@
 
       <ion-col>
         <ion-item [disabled]="state.gameRunning">
-          <ion-label position="floating">Rows</ion-label>
-          <ion-input type="number" [(ngModel)]="state.rows"></ion-input>
+          <ion-label position="floating">Columns</ion-label>
+          <ion-input type="number" [(ngModel)]="state.columns" min="1" max="13"></ion-input>
         </ion-item>
       </ion-col>
 
       <ion-col>
         <ion-item [disabled]="state.gameRunning">
-          <ion-label position="floating">Columns</ion-label>
-          <ion-input type="number" [(ngModel)]="state.columns"></ion-input>
+          <ion-label position="floating">Rows</ion-label>
+          <ion-input type="number" [(ngModel)]="state.rows" min="1" max="18"></ion-input>
         </ion-item>
       </ion-col>
 
