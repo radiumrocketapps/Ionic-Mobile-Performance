@@ -5,14 +5,14 @@ export default class Board {
   public deadCells;
 
   constructor(liveCells = new Map()) {
-    this.liveCells = liveCells
-    this.nextBoard = new Map()
-    this.deadCells = new Map()
+    this.liveCells = liveCells;
+    this.nextBoard = new Map();
+    this.deadCells = new Map();
   }
 
   getLiveCells = () => {
     // Return live cells in each Board.
-    return this.liveCells
+    return this.liveCells;
   }
 
   addCell = position => {

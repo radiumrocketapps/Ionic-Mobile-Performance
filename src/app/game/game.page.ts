@@ -8,8 +8,6 @@ import Board from './board-logic';
 })
 export class GamePage implements OnInit {
 
-  constructor() { }
-
   public intervalRef;
   public state = {
     columns: 100,
@@ -19,7 +17,11 @@ export class GamePage implements OnInit {
     interval: 100,
     board: new Board()
   };
-  
+  public numberOfLiveCells: number;
+
+  constructor() {
+    this.numberOfLiveCells = this.state.rows * this.state.columns * this.state.density;
+  }
 
   ngOnInit() {
     this.handleStart();
@@ -36,9 +38,22 @@ export class GamePage implements OnInit {
     board.style.width = calculation + 'px';
   }
 
+  aleatoryMapping() {
+    for(let x = 0; x < this.state.columns; x++) {
+      for(let y = 0; y < this.state.rows; y++) {
+        const random_boolean = Math.random() < this.state.density;
+        if (random_boolean && this.state.board.getLiveCells().size < this.numberOfLiveCells) {
+          this.storeCell({x, y});
+        }
+      }
+    }
+  }
+
   handleStart = () => {
+    this.aleatoryMapping();
     if (!this.state.gameRunning) {
       this.state.gameRunning = true;
+      console.log('running')
 
       this.intervalRef = setInterval(
         () => this.runGame(),
