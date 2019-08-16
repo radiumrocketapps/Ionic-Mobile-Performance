@@ -1,5 +1,5 @@
 <ion-content padding>
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-row>
 
       <ion-col>
@@ -17,7 +17,7 @@
       </ion-col>
 
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
   <div class="game" id="game">
     <ul class="board" id="board">
       <div *ngFor="let column of returnArrayForNgFor(state.columns); let i = index">
@@ -26,8 +26,8 @@
     </ul>
   </div>
 </ion-content>
-
+<!-- 
 <ion-footer>
   <ion-button color="success" expand="full" *ngIf="!state.gameRunning" (click)="handleStart()">Start</ion-button>
   <ion-button color="danger" expand="full" *ngIf="state.gameRunning" (click)="handleStop()">Stop</ion-button>
-</ion-footer>
+</ion-footer> -->
