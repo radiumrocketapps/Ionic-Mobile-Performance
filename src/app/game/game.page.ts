@@ -12,19 +12,17 @@ export class GamePage implements OnInit {
 
   public intervalRef;
   public state = {
-    columns: 5,
-    rows: 5,
+    columns: 100,
+    rows: 100,
     gameRunning: false,
+    density: .5,
     interval: 100,
     board: new Board()
   };
+  
 
   ngOnInit() {
-    this.showGame();
-  }
-
-  showGame = () => {
-    document.getElementById('game').style.display = 'flex';
+    this.handleStart();
   }
 
   getBoard = () => {
